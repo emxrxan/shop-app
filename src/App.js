@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import Card from "./Components/Card/Card";
+import Modal from "./Components/Modal/Modal";
+import Context from "./Context";
+import Search from "./Components/Search/Search";
+import itemList from "./Items";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
+
+  const [item, setItem] = useState(itemList);
+  const [shoppingCard, setShoppingCard] = useState([]);
+  const [isOpen,setIsOpen] = useState(false);
+  const [totalCost, setTotalCost] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ isOpen, setIsOpen, item, setItem, shoppingCard, setShoppingCard, totalCost, setTotalCost}}>
+      <Navbar />
+      <Search />
+      <Card />
+      <Modal />
+    </Context.Provider>
   );
 }
 

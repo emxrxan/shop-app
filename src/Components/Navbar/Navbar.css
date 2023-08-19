@@ -1,0 +1,31 @@
+header{
+    width: 100%;
+    background-color: cadetblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7rem;
+}
+
+header > .ShoppingCart-Container{
+    position: relative;
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    text-align: center;
+}
+
+header > .ShoppingCart-Container:hover{
+    cursor: pointer;
+    color:aquamarine;
+}
+
+.ShoppingCart-Container > .card_number{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: white;
+    padding: 0.1rem;
+    border-radius: 1rem;
+}
