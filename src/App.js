@@ -13,6 +13,7 @@ function App() {
   const [shoppingCard, setShoppingCard] = useState([]);
   const [isOpen,setIsOpen] = useState(false);
   const [totalCost, setTotalCost] = useState(0);
+  
 
   return (
     <Context.Provider value={{ isOpen, setIsOpen, item, setItem, shoppingCard, setShoppingCard, totalCost, setTotalCost}}>
